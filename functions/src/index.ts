@@ -1,12 +1,16 @@
 import * as functions from 'firebase-functions';
 
-
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
 //
 export const helloWorld = functions.https.onRequest((request, response) => {
    functions.logger.info("Hello logs!", {structuredData: true});
-   response.send("Lara");
+   response.send(
+       { data: {
+            name : 'Lara'
+            }
+        }
+       );
  });
 
 
@@ -16,7 +20,7 @@ export const helloWorld = functions.https.onRequest((request, response) => {
  });
 
  export const registerCoffee = functions.https.onRequest((request, response)=> {
-    response.send("Register coffee");
+    response.send("Register");
  });
 
 
